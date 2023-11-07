@@ -1,0 +1,65 @@
+@mixin mark-styles {
+    position: absolute;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 16px;
+    padding: 8px;
+    
+    &--white {
+        color: #000;
+    }
+}
+
+.square {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 100px;
+  height: 100px;
+  width: 100px;
+  padding: 0;
+  text-align: center;
+  cursor: pointer;
+  transition: cubic-bezier(1, 0, 0, 1) 0.1s;
+  display: flex;
+  position: relative;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  &--white {
+    background: #dcdcdc;
+
+    .square__row-mark, .square__col-mark {
+      color: #000;
+    }
+
+    &:hover {
+      background: #aeaeae;
+    }
+  }
+
+  &--black {
+    background: #181818;
+    color: #fff;
+
+    .square__row-mark, .square__col-mark {
+      color: #fff;
+    }
+
+    &:hover {
+      background: #353535;
+    }
+  }
+
+  &__row-mark {
+    @include mark-styles;
+  }
+
+  &__col-mark {
+    @include mark-styles;
+    bottom: 0;
+    right: 0;
+  }
+  
+}
