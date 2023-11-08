@@ -1,0 +1,30 @@
+.textarea-container {
+  display: flex;
+  flex-direction: column;
+
+  .textarea {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    width: 340px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    line-height: 1.5;
+    resize: none;
+    &:focus {
+      outline: none;
+      border-color: #007bff;
+      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+
+    &__error:not(:focus) {
+      color: #dc3545;
+      font-size: 0.875rem;
+    }
+
+    &--error {
+      border-color: #dc3545;
+      box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+    }
+  }
+}

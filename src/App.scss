@@ -1,15 +1,41 @@
 .app {
-    height: 100vh;
-    width: 100vw;
-    background: linear-gradient(45deg, #000 0%, #fff 100%);
-    color: #000;
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-    margin: 0;
-    padding: 0;
-    text-align: center;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(45deg, #000 0%, #fff 100%);
+  color: #000;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .main-game-container {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    // width: 100%;
+    height: 100%;
+
+    .board-container {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .fen-input-container {
+      min-width: 420px;
+      height: 100%;
+      display: flex;
+      padding: 5rem 0;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      box-sizing: border-box;
+    }
+  }
 }

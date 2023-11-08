@@ -1,14 +1,5 @@
-export type PieceType = "pawn" | "rook" | "knight" | "bishop" | "queen" | "king";
+import { SquareState } from "../../hooks/useFenNotation.types";
 
-export type PieceProps = {
-    /**
-     * color of the piece
-     */
-    color: "white" | "black";
-    /**
-     * type of the piece
-     */
-    type: PieceType;
-    };
+export type PieceProps = object & SquareState;
 
-    export type PieceSvgProps = Pick<PieceProps, "color">
+export type PieceSvgProps = { color: string };

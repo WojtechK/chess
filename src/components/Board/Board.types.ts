@@ -1,3 +1,5 @@
+import { BoardState, SquareState } from "../../hooks/useFenNotation.types";
+
 export const ROWS_COLUMNS_COUNT = 8;
 export const ROWS = Array.from({ length: ROWS_COLUMNS_COUNT }, (_, i) => i + 1);
 export const COLUMNS = ["a", "b", "c", "d", "e", "f", "g", "h"];
@@ -9,9 +11,18 @@ export type BoardProps = {
   /**
    * current FEN notation state of the board
    */
-  fen?: string;
+  boardState: BoardState;
   /**
-   * Array of moves history in FEN notation
+   * active square
    */
-  moves?: string[];
+  selectedSquare?: string;
+  /**
+   * callback function to handle square click
+   */
+  onSquareClick: (
+    row: RowsType,
+    col: ColumnsType,
+    colIndex: number,
+    piece?: SquareState,
+  ) => void;
 };
