@@ -14,21 +14,14 @@
   flex-direction: column;
   align-items: center;
 
-  .main-game-container {
+  .main-container {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    // width: 100%;
     height: 100%;
 
-    .board-container {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .fen-input-container {
-      min-width: 420px;
+    .options {
+      min-width: 480px;
       height: 100%;
       display: flex;
       padding: 5rem 0;

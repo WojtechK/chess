@@ -4,6 +4,7 @@ import { Textarea } from "./components/Textarea/Textarea";
 import { useFenNotation } from "./hooks/useFenNotation";
 import { Button } from "./components/Button/Button";
 import { useState } from "react";
+import { Card } from "./components/Card/Card";
 
 function App() {
   const {
@@ -17,27 +18,27 @@ function App() {
   } = useFenNotation();
 
   const [isFenOpen, setIsFenOpen] = useState(false);
+
   return (
     <div className="app">
       <header>
         <h1>Chessboard</h1>
       </header>
-      <main className="main-game-container">
-        <div className="board-container">
+      <main className="main-container">
           <Board
             boardState={fenData.position}
             selectedSquare={selectedSquare}
             onSquareClick={onSquareClick}
           />
-        </div>
-        <div className="fen-input-container">
+      
+        <div className="options">
           <Button variant="secondary" onClick={() => setIsFenOpen(!isFenOpen)}>
             Show FEN input
           </Button>
           {isFenOpen && (
-            <>
-              <label htmlFor="fen-input">
-                Enter a valid FEN notation (including all FEN sections):
+            <Card style={{margin: "3rem 0"}}>
+            <label htmlFor="fen-input">
+                Enter FEN position:
               </label>
               <Textarea
                 error={errorMessage}
@@ -46,8 +47,8 @@ function App() {
                 value={fenString}
                 onChange={(e) => onFenInputChange(e.target.value)}
               />
-              <Button onClick={resetGame}>Reset Board</Button>
-            </>
+              <Button style={{ margin: "1rem"}} onClick={resetGame}>Reset Board</Button>
+            </Card> 
           )}
         </div>
       </main>

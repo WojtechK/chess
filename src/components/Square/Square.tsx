@@ -6,7 +6,6 @@ import { Piece } from "../Piece/Piece";
 
 export const Square: React.FC<SquareProps> = memo(
   ({ color, type, rowsMark, colsMark, isSelected = false, ...props }) => {
-    const squareColor = color === "w" ? "white" : "black";
     // should detect if the piece is dark or light based on type uppercase or lowercase
     const isDarkPiece = type === type?.toLowerCase();
     const pieceColor = isDarkPiece ? "b" : "w";
@@ -14,7 +13,7 @@ export const Square: React.FC<SquareProps> = memo(
       <div
         className={clsx(
           "square",
-          `square--${squareColor}`,
+          `square--${color}`,
           isSelected && "square--selected",
         )}
         {...props}
@@ -22,9 +21,7 @@ export const Square: React.FC<SquareProps> = memo(
         {rowsMark && <span className="square__row-mark">{rowsMark}</span>}
         {colsMark && <span className="square__col-mark">{colsMark}</span>}
         {type && (
-          <div className="square__piece">
-            {<Piece type={type} color={pieceColor} />}
-          </div>
+            <Piece type={type} color={pieceColor} />
         )}
       </div>
     );

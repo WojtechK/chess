@@ -8,11 +8,7 @@ export type BoardState = SquareState[][];
 
 export interface FenData {
   position: BoardState;
-  activeColor: Color;
-  castlingAvailability: string;
-  enPassantTarget: string;
-  halfmoveClock: number;
-  fullmoveNumber: number;
+ // maybe add more FEN parts as future improvements
 }
 
 export type useFenNotationType = () => {

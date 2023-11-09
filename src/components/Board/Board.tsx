@@ -3,6 +3,7 @@ import "./Board.scss";
 import { Square } from "../Square/Square";
 import { BoardProps, COLUMNS, ROWS } from "./Board.types";
 import { getColsMark, getRowsMark, getSquareColor } from "./Board.utils";
+import { Piece } from "../../hooks/useFenNotation.types";
 
 export const Board: React.FC<BoardProps> = ({
   selectedSquare,
@@ -22,7 +23,7 @@ export const Board: React.FC<BoardProps> = ({
                 color={getSquareColor(row, colIndex)}
                 rowsMark={getRowsMark(col, row)}
                 colsMark={getColsMark(row, col)}
-                type={chessPiece?.type}
+                type={chessPiece?.type as Piece}
                 onClick={() => onSquareClick(row, col, colIndex, chessPiece)}
                 isSelected={selectedSquare === squareId}
               />

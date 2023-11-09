@@ -1,3 +1,5 @@
+@import "../../styles/variables.scss";
+
 @mixin mark-styles {
   position: absolute;
   font-size: 16px;
@@ -27,8 +29,8 @@
     transform: scale(1.02);
   }
 
-  &--white {
-    background: #dcdcdc;
+  &--light {
+    background: #ffe2cc;
 
     .square__row-mark,
     .square__col-mark {
@@ -36,12 +38,12 @@
     }
 
     &:hover {
-      background: #aeaeae;
+      background: #fff2e6;
     }
   }
 
-  &--black {
-    background: #181818;
+  &--dark {
+    background: $brand-color;
     color: #fff;
 
     .square__row-mark,
@@ -50,17 +52,17 @@
     }
 
     &:hover {
-      background: #353535;
+      background: #b34d00;
     }
   }
 
   &--selected {
     animation: pulse 1s infinite;
     z-index: 1;
-    background: #ff6f00;
+    background: #ff7b16;
 
     &:hover {
-      background: #ff8124;
+      background: #ff7b16;
     }
 
     .square__row-mark,
