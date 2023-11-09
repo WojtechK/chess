@@ -20,9 +20,7 @@ export const Square: React.FC<SquareProps> = memo(
       >
         {rowsMark && <span className="square__row-mark">{rowsMark}</span>}
         {colsMark && <span className="square__col-mark">{colsMark}</span>}
-        {type && (
-            <Piece type={type} color={pieceColor} />
-        )}
+        {type && <Piece type={type} color={pieceColor} />}
       </div>
     );
   },

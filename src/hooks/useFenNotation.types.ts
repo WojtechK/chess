@@ -8,7 +8,7 @@ export type BoardState = SquareState[][];
 
 export interface FenData {
   position: BoardState;
- // maybe add more FEN parts as future improvements
+  // maybe add more FEN parts as future improvements
 }
 
 export type useFenNotationType = () => {

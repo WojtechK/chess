@@ -1,9 +1,10 @@
 import React from "react";
 import "./Board.scss";
 import { Square } from "../Square/Square";
-import { BoardProps, COLUMNS, ROWS } from "./Board.types";
+import { BoardProps } from "./Board.types";
 import { getColsMark, getRowsMark, getSquareColor } from "./Board.utils";
 import { Piece } from "../../hooks/useFenNotation.types";
+import { COLUMNS, ROWS } from "../../constants";
 
 export const Board: React.FC<BoardProps> = ({
   selectedSquare,

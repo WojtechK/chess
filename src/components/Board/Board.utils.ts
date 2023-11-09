@@ -1,5 +1,6 @@
+import { COLUMNS, ROWS } from "../../constants";
 import { SquareColor } from "../Square/Square.types";
-import { COLUMNS, ColumnsType, ROWS, RowsType } from "./Board.types";
+import { ColumnsType, RowsType } from "./Board.types";
 
 // if it's first Board column, display row mark (1-8)
 const getRowsMark = (col: ColumnsType, row: RowsType) => {

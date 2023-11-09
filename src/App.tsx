@@ -3,10 +3,9 @@ import { Board } from "./components/Board/Board";
 import { Textarea } from "./components/Textarea/Textarea";
 import { useFenNotation } from "./hooks/useFenNotation";
 import { Button } from "./components/Button/Button";
-import { useState } from "react";
 import { Card } from "./components/Card/Card";
 
-function App() {
+const App = () => {
   const {
     fenString,
     onFenInputChange,
@@ -17,43 +16,55 @@ function App() {
     selectedSquare,
   } = useFenNotation();
 
-  const [isFenOpen, setIsFenOpen] = useState(false);
-
   return (
     <div className="app">
       <header>
         <h1>Chessboard</h1>
       </header>
       <main className="main-container">
-          <Board
-            boardState={fenData.position}
-            selectedSquare={selectedSquare}
-            onSquareClick={onSquareClick}
-          />
-      
-        <div className="options">
-          <Button variant="secondary" onClick={() => setIsFenOpen(!isFenOpen)}>
-            Show FEN input
-          </Button>
-          {isFenOpen && (
-            <Card style={{margin: "3rem 0"}}>
-            <label htmlFor="fen-input">
-                Enter FEN position:
-              </label>
-              <Textarea
-                error={errorMessage}
-                id="fen-input"
-                rows={3}
-                value={fenString}
-                onChange={(e) => onFenInputChange(e.target.value)}
-              />
-              <Button style={{ margin: "1rem"}} onClick={resetGame}>Reset Board</Button>
-            </Card> 
-          )}
-        </div>
+        <Board
+          boardState={fenData.position}
+          selectedSquare={selectedSquare}
+          onSquareClick={onSquareClick}
+        />
+        <section className="options">
+          <Card>
+            <label htmlFor="fen-input">Enter FEN position:</label>
+            <Textarea
+              id="fen-input"
+              error={errorMessage}
+              rows={3}
+              value={fenString}
+              onChange={(e) => onFenInputChange(e.target.value)}
+            />
+            <Button onClick={resetGame}>Reset Board</Button>
+          </Card>
+          <Card>
+            <h2>Documentation</h2>
+            <ul className="documentation-list">
+              <li>
+                This is simplified version of Chess game. The pieces can be
+                moved wherever and without any rules or order.
+              </li>
+              <li>
+                Pieces can attack each other and the attacked piece is removed
+                from the board.
+              </li>
+              <li>Pieces within the same team can be toggled when selected.</li>
+              <li>
+                <strong>FEN notation</strong> is simplified to include only part
+                of the notation responsible for position.
+              </li>
+              <li>
+                <strong>FEN notation</strong> is updated on every move or by
+                entering it manually in the textarea.
+              </li>
+            </ul>
+          </Card>
+        </section>
       </main>
     </div>
   );
-}
+};
 
 export default App;

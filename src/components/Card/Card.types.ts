@@ -1,4 +1,6 @@
-
 export type CardProps = {
-    title?: string;
-    } & React.HTMLAttributes<HTMLDivElement>;
+  /**
+   * Specify the title of the card
+   */
+  title?: string;
+} & React.HTMLAttributes<HTMLDivElement>;

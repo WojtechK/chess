@@ -35,9 +35,12 @@ export const Piece: React.FC<PieceProps> = memo(({ type, color }) => {
         return "";
     }
   };
-  
-  return (
-    <img src={getPiece(typeLowercase, color)} alt={type} className="piece__img" />
-  )
 
+  return (
+    <img
+      src={getPiece(typeLowercase, color)}
+      alt={type}
+      className="piece__img"
+    />
+  );
 });
