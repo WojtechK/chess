@@ -5,7 +5,7 @@
                 moved wherever and without any rules or order.
               </li>
               <li>
-                Pieces can attack each other and the attacked piece is removed
+               Pieces can attack opposite color and the attacked piece is removed
                 from the board.
               </li>
               <li>Pieces within the same team can be toggled when selected.</li>
