@@ -1,13 +1,24 @@
-# React + TypeScript + Vite
+# Chess game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<li>
+                This is simplified version of Chess game. The pieces can be
+                moved wherever and without any rules or order.
+              </li>
+              <li>
+                Pieces can attack each other and the attacked piece is removed
+                from the board.
+              </li>
+              <li>Pieces within the same team can be toggled when selected.</li>
+              <li>
+                <strong>FEN notation</strong> is simplified to include only part
+                of the notation responsible for position.
+              </li>
+              <li>
+                <strong>FEN notation</strong> is updated on every move or by
+                entering it manually in the textarea.
+              </li>
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
+## Live version   
 
 If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
