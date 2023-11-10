@@ -29,7 +29,9 @@ const App = () => {
         />
         <section className="options">
           <Card>
-            <label className="fen-input-label" htmlFor="fen-input">Enter FEN position:</label>
+            <label className="fen-input-label" htmlFor="fen-input">
+              Enter FEN position:
+            </label>
             <Textarea
               id="fen-input"
               error={errorMessage}
@@ -47,8 +49,8 @@ const App = () => {
                 moved wherever and without any rules or order.
               </li>
               <li>
-                Pieces can attack opposite color and the attacked piece is removed
-                from the board.
+                Pieces can attack opposite color and the attacked piece is
+                removed from the board.
               </li>
               <li>Pieces within the same team can be toggled when selected.</li>
               <li>

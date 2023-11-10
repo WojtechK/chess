@@ -1,6 +1,5 @@
 import { SquareState } from "../../hooks/useFenNotation.types";
 import { ColumnsType, RowsType } from "../Board/Board.types";
-export type SquareColor = "light" | "dark";
 
 export type SquareProps = {
   /**
@@ -15,4 +14,5 @@ export type SquareProps = {
    * is the square selected
    */
   isSelected?: boolean;
-} & SquareState & React.HTMLAttributes<HTMLDivElement>;
+} & SquareState &
+  React.HTMLAttributes<HTMLDivElement>;
