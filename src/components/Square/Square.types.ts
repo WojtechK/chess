@@ -1,4 +1,4 @@
-import { Piece } from "../../hooks/useFenNotation.types";
+import { SquareState } from "../../hooks/useFenNotation.types";
 import { ColumnsType, RowsType } from "../Board/Board.types";
 export type SquareColor = "light" | "dark";
 
@@ -15,12 +15,4 @@ export type SquareProps = {
    * is the square selected
    */
   isSelected?: boolean;
-  /**
-   * piece chess type
-   */
-  type: Piece | null;
-  /**
-   * square color
-   */
-  color: SquareColor;
-} & React.HTMLAttributes<HTMLDivElement>;
+} & SquareState & React.HTMLAttributes<HTMLDivElement>;

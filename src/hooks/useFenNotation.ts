@@ -24,7 +24,6 @@ export const useFenNotation: useFenNotationType = () => {
     LOCAL_STORAGE_KEYS.FEN_DATA,
     fenToBoardState(INITIAL_FEN),
   );
-  console.log(fenData);
   const [hasFenError, setHasFenError] = useState(false);
   const [selectedSquare, setSelectedSquare] = useState<string | undefined>();
 
@@ -71,7 +70,7 @@ export const useFenNotation: useFenNotationType = () => {
         updateFenData(row, colIndex, selectedSquare);
       }
 
-      //CASE 3 - if the piece is already selected and clicked on other piece detect color, then toggle or attack
+      //CASE 3 - if the piece is already selected and clicked on another piece detect color, then deselect, toggle or attack
       else if (clickedPiece && selectedSquare) {
         const isClickedPieceSameColor = isSameColor(
           fenData,
@@ -79,6 +78,11 @@ export const useFenNotation: useFenNotationType = () => {
           row,
           colIndex,
         );
+
+        if (selectedSquare == clickedSquareId) {
+          setSelectedSquare(undefined);
+          return;
+        }
 
         if (isClickedPieceSameColor) {
           setSelectedSquare(clickedSquareId);

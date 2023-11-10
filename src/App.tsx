@@ -29,7 +29,7 @@ const App = () => {
         />
         <section className="options">
           <Card>
-            <label htmlFor="fen-input">Enter FEN position:</label>
+            <label className="fen-input-label" htmlFor="fen-input">Enter FEN position:</label>
             <Textarea
               id="fen-input"
               error={errorMessage}

@@ -15,7 +15,6 @@ export const getNewFenData = (
 ) => {
   const [selectedRow, selectedCol] = selectedSquare;
   const selectedColIndex = COLUMNS.indexOf(selectedCol as ColumnsType);
-  console.log(fenData.position);
   const selectedPiece =
     fenData.position[parseInt(selectedRow, 10) - 1][selectedColIndex];
 
